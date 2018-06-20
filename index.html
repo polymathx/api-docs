@@ -1,0 +1,776 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">json</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#contents" class="toc-h1 toc-link" data-title="contents">Contents</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-content-by-slug" class="toc-h2 toc-link" data-title="get-content-by-slug">Get Content by Slug</a>
+                  </li>
+                  <li>
+                    <a href="#get-content-models" class="toc-h2 toc-link" data-title="get-content-models">Get Content Models</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-content-from-model" class="toc-h2 toc-link" data-title="get-all-content-from-model">Get all Content from Model</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#media" class="toc-h1 toc-link" data-title="media">Media</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-media-from-id" class="toc-h2 toc-link" data-title="get-media-from-id">Get Media from ID</a>
+                  </li>
+                  <li>
+                    <a href="#get-media-groups" class="toc-h2 toc-link" data-title="get-media-groups">Get Media Groups</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-media-from-media-group" class="toc-h2 toc-link" data-title="get-all-media-from-media-group">Get all Media from Media Group</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#contacts" class="toc-h1 toc-link" data-title="contacts">Contacts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-7" class="toc-h2 toc-link" data-title="http-request">HTTP Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#website-seo" class="toc-h1 toc-link" data-title="website-seo">Website SEO</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-8" class="toc-h2 toc-link" data-title="http-request">HTTP Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sitemap-data" class="toc-h1 toc-link" data-title="sitemap-data">Sitemap Data</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#http-request-9" class="toc-h2 toc-link" data-title="http-request">HTTP Request</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="errors">Errors</a>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://polymathx.com/#contact'>Sign Up for a Polymath CMS Account</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+        <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Polymath CMS API! You can use our API to access Polymath API endpoints, which can get information on various contents, images, assets, data models, and leads in our database.</p>
+
+<p>You can view API response examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right. PHP examples will be added soon.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>Example response from a base authentication</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"_view"</span><span class="p">:</span><span class="w"> </span><span class="s2">"API_INDEX"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"_views"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Response"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"added_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"system"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"data:image/png;base64"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-08T06:20:31.161Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-03T01:11:07.185Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://yoururl.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourapikey"</span><span class="w">
+</span><span class="p">},</span><span class="w">
+  </span><span class="s2">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.polymathx.com/contents"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.polymathx.com/contacts"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"media"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.polymathx.com/media"</span><span class="w"> 
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Make sure to authenticate with your API key.</p>
+</blockquote>
+
+<p>Polymath uses API keys to allow access to the API. Your company account owner can give you access to retrieve, and reset this key in the <a href="https://app.polymathx.com">content management portal</a>.</p>
+
+<p>The API expects for the API key to be included in all API requests to the server in a GET or POST that looks like the following:</p>
+
+<p><code>https://api.polymathx.com/?key=yourapikey</code></p>
+
+<table><thead>
+<tr>
+<th>Required Global Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>The API key, found in the &quot;Company&quot; section of your CMS portal.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+You must replace <code>yourapikey</code> with your personal API key, and add this parameter on ALL API requests.
+</aside>
+<h1 id='contents'>Contents</h1>
+<p>CMS contents are the primary data set from the CMS. All your website content can be accessed through the content endpoints, including SEO contents associated with each content set. </p>
+<h2 id='get-content-by-slug'>Get Content by Slug</h2>
+<p>Retrieve a single piece of content by its slug. </p>
+
+<blockquote>
+<p>https://api.polymathx.com/contents/:slug</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"model_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Content"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-content"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">here</span><span class="p">,</span><span class="w"> </span><span class="err">based</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">content</span><span class="w"> </span><span class="err">model</span><span class="w"> </span><span class="err">*/</span><span class="p">},</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-09T00:45:36.561Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-01-09T00:45:36.561Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"draft"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"primary_image"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"secondary_image"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"seo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"title_tag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"meta_description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"meta_robots"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remove_from_sitemap"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.polymathx.com/contents/&lt;SLUG&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SLUG</td>
+<td>The slug of the content you need to retrieve</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Make sure none of your content shares slugs across different models. Support for specifying a model will be added soon.
+</aside>
+<h2 id='get-content-models'>Get Content Models</h2>
+<p>Get an array of all of your content models.</p>
+
+<blockquote>
+<p>https://api.polymathx.com/contents</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blog Post"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sitemap"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"contents"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.polymathx.com/contents/model/1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.polymathx.com/contents</code></p>
+<h2 id='get-all-content-from-model'>Get all Content from Model</h2>
+<p>Get an array of all content items within a model.</p>
+
+<blockquote>
+<p>https://api.polymathx.com/contents/model/:model_id</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">/*</span><span class="w"> </span><span class="err">Data</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">here</span><span class="p">,</span><span class="w"> </span><span class="err">based</span><span class="w"> </span><span class="err">on</span><span class="w"> </span><span class="err">content</span><span class="w"> </span><span class="err">model</span><span class="w"> </span><span class="err">*/</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"primary_image"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"secondary_image"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.polymathx.com/contents/model/&lt;MODEL_ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>MODEL_ID</td>
+<td>The ID of the model that you want to retrieve contents from.</td>
+</tr>
+</tbody></table>
+<h1 id='media'>Media</h1>
+<p>Media are distributed over the API in the form of CDN-hosted image URLs, and metadata. Images can be fetched from their ID, or in groups from their parent media group. </p>
+<h2 id='get-media-from-id'>Get Media from ID</h2>
+<blockquote>
+<p>https://api.polymathx.com/media/:media_id</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something.jpg"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"alt_text"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-30T21:07:28.477Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-30T21:07:28.477Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"urls"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"hero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polymathx.com/media/321/hero/something.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polymathx.com/media/321/thumb/something.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polymathx.com/media/321/medium/something.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"original"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polymathx.com/media/321/original/something.jpg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Get the image content, and meta data from an image ID.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.polymathx.com/media/&lt;MEDIA_ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>MEDIA_ID</td>
+<td>The ID of the media item you are attempting to retrieve.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Image sizes come in <code>hero</code>, <code>thumb</code>, <code>medium</code> and <code>original</code> by default. Cycle through these accordingly for better site speed, and quicker development.
+</aside>
+<h2 id='get-media-groups'>Get Media Groups</h2>
+<p>Returns an array of all media groups.</p>
+
+<blockquote>
+<p>https://api.polymathx.com/media</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">342</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Homepage Carousel"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This group contains images for the homepage carousel."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://api.polymathx.com/media</code></p>
+<h2 id='get-all-media-from-media-group'>Get all Media from Media Group</h2>
+<p>Returns an array of images from the media group specified.</p>
+
+<blockquote>
+<p>https://api.polymathx.com/media/groups/:group_id</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"alt_text"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-30T21:07:28.477Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-30T21:07:28.477Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"something.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"urls"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"hero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polymathx.com/media/321/hero/something.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polymathx.com/media/321/thumb/something.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medium"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polymathx.com/media/321/medium/something.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"original"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.polymathx.com/media/321/original/something.jpg"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.polymathx.com/media/groups/&lt;GROUP_ID&gt;</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GROUP_ID</td>
+<td>The ID of the media group you are attempting to retrieve.</td>
+</tr>
+</tbody></table>
+<h1 id='contacts'>Contacts</h1>
+<blockquote>
+<p>https://api.polymathx.com/contacts</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1812</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"contact_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timmy Chimichanga"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timbo@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I want to inquire about chimichangas."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fresh"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Returns an array of leads/contacts.</p>
+
+<p>Contacts are the leads you have collected through your website&#39;s contact forms.  Contacts are returned as an array of all your contacts. Ability to filter by <code>form_id</code> coming soon. </p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://api.polymathx.com/contacts</code></p>
+<h1 id='website-seo'>Website SEO</h1>
+<blockquote>
+<p>https://api.polymathx.com/meta</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"title_suffix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Site Name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"robots"</span><span class="p">:</span><span class="w"> </span><span class="s2">"##robots.txt contents"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"meta_robots"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index, follow"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"webmaster_verification"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;!-- Some string of HTML with your verification scripts in it --&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"header_analytics"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;script&gt;//some header script string&lt;/script&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Website SEO is returned as a JSON blob of all global meta data associated with your website.</p>
+
+<p>This content is intended to be used on every page of your website, in the meta section. It also includes the contents of the robots.txt file for your website.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://api.polymathx.com/meta</code></p>
+<h1 id='sitemap-data'>Sitemap Data</h1>
+<blockquote>
+<p>https://api.polymathx.com/sitemap</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"maps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="w">
+  </span><span class="s2">"contents"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-slug"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-22T22:03:35.765Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"model_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"slug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-slug2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-22T22:03:35.765Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"model_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Sitemap data is returned as a JSON blob that includes all information needed to build a sitemap for all your website content.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://api.polymathx.com/sitemap</code></p>
+
+<!-- # Kittens -->
+
+<!-- ## Get All Kittens
+
+
+
+This endpoint retrieves all kittens.
+
+### HTTP Request
+
+`GET http://example.com/api/kittens`
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+include_cats | false | If set to true, the result will also include cats.
+available | true | If set to false, the result will include kittens that have already been adopted.
+
+<aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside>
+
+## Get a Specific Kitten
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get(2)
+```
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.get(2);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 2,
+  "name": "Max",
+  "breed": "unknown",
+  "fluffiness": 5,
+  "cuteness": 10
+}
+```
+
+This endpoint retrieves a specific kitten.
+
+<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+
+### HTTP Request
+
+`GET http://example.com/kittens/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to retrieve
+
+## Delete a Specific Kitten
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -X DELETE
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.delete(2);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 2,
+  "deleted" : ":("
+}
+```
+
+This endpoint deletes a specific kitten.
+
+### HTTP Request
+
+`DELETE http://example.com/kittens/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to delete -->
+<h1 id='errors'>Errors</h1>
+<blockquote>
+<p>An example error code from the API result.</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No content found with that query."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>If a transaction with the API fails, you will be returned with a set of JSON representing the error. The Polymath API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>404</td>
+<td>Content or endpoint data not found</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server, or your query failed. Try again later, or contact an account representative if this persists.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+If the errors you experience are not due to lack of content, or you believe the error to be the result of a bug please contact your account representative. 
+</aside>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">json</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
